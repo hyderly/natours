@@ -1,0 +1,147 @@
+
+
+body{
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    line-height: 1.7;
+    color: $color-text-dark;
+}
+
+.heading-center{
+    text-align: center;
+}
+
+.primary-text{
+    text-transform: uppercase;
+    color: $color-text-light;
+    margin-bottom: 6rem;
+
+    &--main{
+        display: block;
+        font-size: 6rem;
+        letter-spacing: 3.5rem;
+        text-transform: uppercase;
+        font-weight: 400;
+        animation: LeftIn 1.5s ease-out;
+        -webkit-animation: LeftIn 1.5s ease-out;
+
+        @include respond(phone){ 
+            font-size: 5rem;
+            letter-spacing: 1rem;
+        }
+    
+    }
+    
+    &--sub{
+        display: block;
+        font-size: 2rem;
+        letter-spacing: 1.3rem;
+        text-transform: uppercase;
+        font-weight: 400;
+        animation: RightIn 1.5s ease-in-out;
+        -webkit-animation: RightIn 1.5s ease-in-out;
+        
+        @include respond(phone){ 
+            font-size: 1.8rem;
+            letter-spacing: .5rem;
+        }
+    }
+}
+
+.heading-secondary{
+    display: inline-block;
+    font-size: 3.5rem;
+    font-weight: 800;
+    background-image: linear-gradient(to right , $color-primary-dark, $color-primary-light);
+    color: transparent;
+    -webkit-background-clip: text;
+    transition: all .2s;
+    -webkit-transition: all .2s;
+    -moz-transition: all .2s;
+    -ms-transition: all .2s;
+    -o-transition: all .2s;
+    margin-bottom: 3rem;
+    text-transform: capitalize;
+    margin-bottom: 8rem;
+
+    @include respond(tab-port){
+        font-size: 3rem;
+        margin-bottom: 6rem;
+    }
+    @include respond(phone){
+        font-size: 2.5rem;
+        margin-bottom: 4rem;
+    }
+        
+        &:hover{
+        transform: skewX(5deg) skewY(3deg);
+        -webkit-transform: skewX(5deg) skewY(3deg);
+        -moz-transform: skewX(5deg) skewY(3deg);
+        -ms-transform: skewX(5deg) skewY(3deg);
+        -o-transform: skewX(5deg) skewY(3deg);
+        text-shadow: 0 2rem 3rem rgba($color-box-shadow-dark, 0.8);
+
+        @include respond(tab-port){
+            transform: skewX(0) skewY(0);
+            -webkit-transform: skewX(0) skewY(0);
+            text-shadow: 0 ;
+        }
+        @include respond(phone){
+            transform: skewX(0) skewY(0);
+            -webkit-transform: skewX(0) skewY(0);
+            text-shadow: 0 ;
+        }
+        }
+
+}
+.heading-tertiary{ 
+    display: inline-block;
+    font-size: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    background-image: linear-gradient(to top, $color-primary, $color-primary-light);
+    color: transparent;
+    -webkit-background-clip: text;
+    border-bottom: 1px solid #f1f1f1;
+    transition:linear .2s;
+    -webkit-transition:linear .2s;
+    -moz-transition:linear .2s;
+    -ms-transition:linear .2s;
+    -o-transition:linear .2s;
+    margin-bottom: 2rem;
+
+    @include respond(tab-port){
+        background-image: none;
+        color: $color-text-dark-2;
+    }
+
+    &:hover        
+    {
+        border-bottom: 1px solid $color-primary;
+
+    }
+}
+
+.paragraph-tertiary{
+    font-size: 1.6rem;
+    line-height: 1;
+    
+    &:not(:last-child){
+        margin-bottom: 3rem;
+    }
+
+}
+
+// .heading-tours{
+//     @include main-heading-color;
+        
+//     @include main-heading-hover;
+// }
+
+// .heading-form{
+//     @include main-heading-color;
+//     margin-bottom: 2rem;
+//     @include main-heading-hover;
+// }
+
+

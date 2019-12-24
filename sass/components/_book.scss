@@ -1,0 +1,29 @@
+
+.book{
+    background-image: linear-gradient(105deg, rgba(#fff, .9) 0%, rgba(#fff, .9) 50%, transparent 50%),url(../img/nat-10.jpg);
+    background-size: cover;
+    height: 50rem;
+    width: 100%;
+
+    @include respond(tab-land){
+        width: 80%; 
+        margin: 0 auto;
+    }
+    @include respond(tab-port){
+        width: 80%; 
+        margin: 0 auto;
+        background-image: linear-gradient(to right bottom, rgba(#fff, .9) 0%, rgba(#fff, .9) 100%), url(../img/nat-10.jpg);
+    }
+
+    &__form{
+        width: 50%;
+        padding: 6rem;
+        
+        @include respond(tab-land){
+            width: 70%;
+        }
+        @include respond(tab-port){
+            width: 100%;
+        }
+    }
+}   

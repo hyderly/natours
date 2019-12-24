@@ -1,0 +1,54 @@
+
+
+.form{
+
+    &__group{
+        &:not(:last-child){
+            margin-bottom: 2rem;
+        }
+    }
+
+    &__input{
+        background-color: $color-text-light;
+        font-size: 1.6rem;
+        padding: 1.2rem 2rem;
+        color: $color-text-dark-2;
+        box-shadow: 0 1rem 2rem rgba($color-black, .2);
+        border: none;
+        border-bottom: .3rem solid transparent;
+        font-family: inherit;
+        display: block;
+        width: 60%;
+        transition: all .5s;
+        border-radius: 1rem;
+
+        @include respond(tab-port){
+            width: 100%;
+        }
+
+        &::-webkit-input-placeholder{
+            color: $color-text-dark-2;
+        }
+
+        &:focus{
+            outline: none;
+            border-bottom: .3rem solid $color-primary;
+
+
+            &:invalid{
+                border-bottom: .3rem solid $color-secondary-dark; 
+            }
+        }
+        
+        
+    }
+
+    &__label{
+            font-size: 1.6rem;
+            font-weight: 500;
+            
+            
+    }
+
+    
+}

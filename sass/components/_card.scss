@@ -1,0 +1,384 @@
+
+
+.card{
+
+    // basic card functionality
+    perspective: 150rem;
+    -moz-perspective: 150rem;
+    position: relative;
+    height: 52rem;
+
+    &:first-child{
+        @include respond(tab-port){
+            margin-top:5rem;
+    
+        } 
+    }
+
+
+    
+    
+    // both front and back side modification
+    &__side{
+    font-size: 1.6rem;
+    color: $color-text-light;
+    height: 52rem;
+    transition:all .8s ease-in-out;
+    -webkit-transition:all .8s ease-in-out;
+    -moz-transition:all .8s ease-in-out;
+    -ms-transition:all .8s ease-in-out;
+    -o-transition:all .8s ease-in-out;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    border-radius:.3rem;
+    -webkit-border-radius:.3rem;
+    -moz-border-radius:.3rem;
+    -ms-border-radius:.3rem;
+    -o-border-radius:.3rem;
+    box-shadow: 0 1rem 3rem $color-box-shadow-dark;
+    overflow: hidden;
+
+    // basic front side color and styling
+    &--front
+    {
+        background-color: $color-text-light;
+        color: black;
+    }
+
+    // basic back side colors and styling
+    &--back{
+        transform: rotateY(180deg);
+        -webkit-transform: rotateY(180deg);
+        -moz-transform: rotateY(180deg);
+        -ms-transform: rotateY(180deg);
+        -o-transform: rotateY(180deg);
+
+        &-1{
+            background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark);
+        }
+        &-2{
+            background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark);
+        }
+        &-3{
+            background-image: linear-gradient(to right bottom, $color-tertiary-light, $color-tertiary-dark);
+        }
+    }
+    }
+
+    //front side hover effects ( card:hover card__side--front )
+    &:hover &__side--front{
+        transform: rotateY(-180deg);
+        -webkit-transform: rotateY(-180deg);
+        -moz-transform: rotateY(-180deg);
+        -ms-transform: rotateY(-180deg);
+        -o-transform: rotateY(-180deg);
+}
+
+    //back side hover effects ( card:hover card__side--back )
+    &:hover &__side--back{
+        transform: rotateY(0);
+        -webkit-transform: rotateY(0);
+        -moz-transform: rotateY(0);
+        -ms-transform: rotateY(0);
+        -o-transform: rotateY(0);
+}
+
+
+//inside the backside card
+&__cta{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%)    ;
+    -webkit-transform: translate(-50% , -50%)    ;
+    -moz-transform: translate(-50% , -50%)    ;
+    -ms-transform: translate(-50% , -50%)    ;
+    -o-transform: translate(-50% , -50%)    ;
+    width: 90%;
+}
+
+// price-box inside the backside card
+&__price-box{
+    color: $color-text-light;
+    text-align: center;
+    margin-bottom: 6rem; 
+    
+}
+
+// price-only inside the backside card
+&__price-only{
+    font-size: 1.4rem;
+}
+
+// price-value inside the backside card
+&__price-value{
+    font-size: 6rem;
+}
+
+
+//inside the front-side
+
+&__picture{
+    height: 25vh;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    background-size: cover;
+
+    @supports (background-blend-mode:screen){
+        background-blend-mode:screen;
+    }
+
+    &--1{
+        background-image: linear-gradient($color-secondary-light, $color-secondary-dark),
+        url(../img/nat-5.jpg);
+    }
+    &--2{
+        background-image: linear-gradient($color-primary-light, $color-primary-dark),
+        url(../img/nat-6.jpg);
+    }
+    &--3{
+        background-image: linear-gradient($color-tertiary-light, $color-tertiary-dark),
+        url(../img/nat-7.jpg);
+    }
+}
+// &__heading{
+    
+// }
+&__details{
+    padding: 3rem;
+    ul{
+        list-style: none;
+        color: $color-text-dark;
+        width: 80%;
+        margin: 0 auto;
+    }
+    li{
+        padding: 1rem;
+        
+        
+        &:not(:last-child){
+            border-bottom: .1rem solid $color-dark-light;
+        }
+    }
+}
+
+&__heading{
+    color: $color-text-light;
+    font-size: 2.8rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    position: absolute;
+    top: 10rem;
+    right: 0;
+    width: 75%;
+
+    
+}
+
+&__heading-span{
+    padding: 1rem 1.5rem;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+
+    
+    &--1{
+        background-image: linear-gradient(to right bottom, rgba($color-secondary-light, 0.8), rgba($color-secondary-dark, 0.8))
+    }
+    &--2{
+        background-image: linear-gradient(to right bottom, rgba($color-primary-light, 0.8), rgba($color-primary-dark, 0.8))
+    }
+    &--3{
+        background-image: linear-gradient(to right bottom, rgba($color-tertiary-light, 0.8), rgba($color-tertiary-dark, 0.8))
+    }
+}
+
+
+
+    
+    
+    
+    @media only screen and (max-width:56.25em),
+        only screen and (hover : none) {
+        // basic card functionality
+        height: auto;
+        box-shadow: 0 1rem 3rem $color-box-shadow-dark;
+        background-color: $color-text-light;
+        
+        // both front and back side modification
+        &__side{
+        font-size: 1.6rem;
+        height: auto;
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        box-shadow: none;
+        overflow: hidden;
+
+        // basic front side color and styling
+
+        // basic back side colors and styling
+        &--back{
+            transform: rotateY(0);
+
+            clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 100%);
+        }
+        }
+
+        //front side hover effects ( card:hover card__side--front )
+        &:hover &__side--front{
+            transform: rotateY(0);
+    }
+
+
+
+    //inside the backside card
+    &__cta{
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: translate(0);
+        width: 100%;
+        padding: 5rem 4rem 4em 4rem;
+    }
+
+    // price-box inside the backside card
+    &__price-box{
+        color: $color-text-light;
+        text-align: center;
+        margin-bottom: 3rem; 
+        
+    }
+
+    // price-value inside the backside card
+    &__price-value{
+        font-size: 6rem;
+    }
+
+
+    //inside the front-side
+
+    &__picture{
+        height: 25rem;
+    }
+    
+    &__details{
+        padding: 2.5rem;
+    }
+
+    &__heading{
+        font-size: 2.5rem;
+        top: 18rem;
+        right: 0;
+        width: 70%;
+        
+    }
+
+    &__heading-span{
+        padding: .5rem 1rem;
+    
+    }
+
+}
+
+    @include respond(phone){
+        // basic card functionality
+    perspective: 0;
+    height: auto;
+
+
+    
+    
+    // both front and back side modification
+    &__side{
+    font-size: 1.2rem;
+    color: $color-text-light;
+    height: auto;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-radius:.2rem;
+    -webkit-border-radius:.2rem;
+    box-shadow: none;
+
+    // basic front side color and styling
+
+    // basic back side colors and styling
+    
+
+    //front side hover effects ( card:hover card__side--front )
+    &:hover &__side--front{
+        transform: rotateY(-180deg);
+        -webkit-transform: rotateY(-180deg);
+        -moz-transform: rotateY(-180deg);
+        -ms-transform: rotateY(-180deg);
+        -o-transform: rotateY(-180deg);
+}
+
+
+
+//inside the backside card
+&__cta{
+    
+    width: 50%;
+}
+
+// price-box inside the backside card
+&__price-box{
+    color: $color-text-light;
+    text-align: center;
+    margin-bottom: 6rem; 
+    
+}
+
+// price-only inside the backside card
+&__price-only{
+    font-size: 1rem;
+}
+
+// price-value inside the backside card
+&__price-value{
+    font-size: 2rem;
+    padding-left: 1rem;
+}
+}
+// &__heading{
+    
+// }
+&__details{
+    padding: 2rem;
+    ul{
+        list-style: none;
+        color: $color-text-dark;
+        width: 100%;
+        margin: 0 auto;
+    }
+    li{
+        padding: .5rem;
+    }
+}
+
+&__heading{
+    font-size: 2rem;
+    font-weight: 300;
+    top: 10rem;
+    right: 0;
+    width: 100%;
+
+    
+}
+
+&__heading-span{
+    padding: .5rem 1rem;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+
+}
+    }
+}
+

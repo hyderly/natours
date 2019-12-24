@@ -1,0 +1,94 @@
+.story{
+    position: relative;
+    background-color: rgba($color-text-light, 0.7);
+    font-size: 1.6rem;
+    padding: 8rem;
+    text-align: justify;
+    border-radius: .3rem;
+    width: 75%;
+    margin: 0 auto;
+    transform: skew(-10deg);
+
+    @include respond(tab-port){
+        width: 100%;
+        padding: 3rem 6rem;
+        border-radius: .2rem;
+    }
+
+    @include respond(phone){
+        width: 100%;
+        padding: 2rem 5rem;
+        border-radius: .2rem;
+        transform: skew(0);
+    }
+
+
+    & > * {
+        transform: skew(10deg);
+
+        @include respond(phone){
+            transform: skew(0);
+        }
+    }
+
+    &__heading{
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    
+
+    &__shape{
+        width: 15rem;
+        height: 15rem;
+        float: left;
+        -webkit-shape-outside: circle(50% at 50% 50%);
+        shape-outside: circle(50% at 50% 50%);
+        transform: translateX(-3rem) skew(10deg);
+        overflow: hidden;
+        border-radius: 50%;
+        
+        @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+            -webkit-clip-path: circle(50% at 50% 50%);
+            clip-path: circle(50% at 50% 50%);
+            border-radius: none;
+        }
+
+        @include respond(phone){
+            transform: translateX(-3rem) skew(0);
+        }
+    }
+
+    
+
+    &__image{
+        height: 100%;
+        backface-visibility: hidden;
+        transform: translateX(-4rem) scale(1.4);
+        transition: all 1s;
+    }
+
+    &__caption{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, 20%);
+        color: $color-text-light;
+        font-size: 2rem;
+        opacity: 0;
+        transition: all 1s;
+        backface-visibility: hidden;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    &:hover &__caption{
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+
+    &:hover &__image{
+        transform: translateX(-3rem) scale(1);
+        filter: blur(.2rem);
+    }
+}

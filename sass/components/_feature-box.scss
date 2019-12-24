@@ -1,0 +1,48 @@
+
+.feature-box{
+    background-color: rgba($color-dark-light, 0.7);
+    padding: 2.5rem ;
+    box-shadow: 0 2rem 4rem rgba($color-box-shadow-dark, .7);
+    font-size: 1.5rem;
+    text-align: center;
+    transition: all .3s;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    -ms-transition: all .3s;
+    -o-transition: all .3s;
+    margin-bottom: 10rem;
+
+    @include respond(tab-land){
+        padding: 2.2rem 1rem;
+        box-shadow: 0 1rem 2rem rgba($color-box-shadow-dark, .4);
+        transition: none;
+        margin-bottom: 0;
+    }
+
+    @include respond(tab-port){
+        padding: 2rem ;
+        box-shadow: 0 1rem 2rem rgba($color-box-shadow-dark, .4);
+    }
+
+
+    &:hover{
+        transform: translateY(-1rem) scale(1.2);
+        -webkit-transform: translateY(-1rem) scale(1.2);
+        -moz-transform: translateY(-1rem) scale(1.2);
+        -ms-transform: translateY(-1rem) scale(1.2);
+        -o-transform: translateY(-1rem) scale(1.2);
+        box-shadow: 0 3rem 4rem rgba($color-box-shadow-dark, .8);
+}
+
+    &__icon{
+    font-size: 5rem;
+    background-image: linear-gradient(to right , $color-primary-dark, $color-primary-dark);
+    display: inline-block;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+
+
+    }
+
+}

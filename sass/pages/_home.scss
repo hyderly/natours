@@ -1,0 +1,80 @@
+
+.section-about{
+    background-color: $color-dark-light;
+    padding-top: 25rem;
+    margin-top: -20vh;
+    margin-bottom: -10rem;
+    padding-bottom: 35rem;
+    // text-align: center;
+
+    // @include respond(tab-land){
+    //     padding-bottom: 20rem; 
+    //     padding-top: 35rem;
+    // }
+
+    @include respond(tab-port){
+        padding-bottom: 20rem; 
+        padding-top: 30rem;
+    }
+
+    @include respond(phone){
+        margin-top: 0;
+        padding-top: 5rem;
+    }
+}
+
+.feature-section{
+    background-image: linear-gradient(rgba($color-primary-light, 0.7),rgba($color-primary-dark, .7)),
+    url(../img/nat-4.jpg);
+    padding: 25rem 0;
+    background-size: cover;
+    
+
+    @supports (clip-path: polygon(0 0)) or (-webkit-clip-path :polygon(0 0)){
+        -webkit-clip-path: polygon(0 5%, 100% 0, 100% 75%, 0 88%);
+        clip-path: polygon(0 5%, 100% 0, 100% 75%, 0 88%);
+    }
+
+
+    @include respond(tab-port){
+        padding: 15rem 0;
+        -webkit-clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%);
+        clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%);
+
+    }
+}
+
+.section-tours{
+    background-color: $color-dark-light;
+    padding: 25rem;
+    text-align: center;
+    margin-top: -25rem;
+
+
+    @include respond(tab-land){
+        padding: 20rem 0 !important;
+        margin-top: -20rem;
+    }
+
+    @include respond(tab-port){
+        padding: 20rem 0 !important;
+        margin-top: -10rem;
+    }
+    
+
+    
+}
+
+.section-stories{
+    padding: 15rem 0;
+    position: relative;
+
+    @include respond(tab-port){
+        padding: 10rem 0;
+    }
+}
+
+.section-book{
+    padding: 15rem 0;
+    background-image: linear-gradient( $color-primary, $color-primary-dark);
+}

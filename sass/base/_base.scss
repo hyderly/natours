@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html{
+        font-size: 62.5% ; // 1rem = 10px, 10px/16px = 62.5%
+
+    // @include respond(phone){  // phone respond is apply when screen size is less than 600 so tab-port is  less than 900 the 600px is also include in this screen size so we descard this.
+    //     font-size: 50%
+    // }
+
+    //width < 1200
+    @include respond(tab-land){ // 1rem = 9px, 9px/16px = 56.25%
+        font-size: 56.25%
+    }
+    //width < 900
+    @include respond(tab-port){ // 1rem = 8px, 8px/16px = 50%
+        font-size: 50%
+    }
+    //width>1800
+    @include respond(big-desktop){ //1rem = 12px, 12px/16px = 75%
+        font-size: 75%
+    }
+}
+
+body{
+    box-sizing: border-box;
+    padding: 3rem;
+
+    @include respond(tab-port){ 
+        padding: 0;
+    }
+}
+
+::selection{
+    background-color: $color-primary;
+    color: #fff;
+}
+
